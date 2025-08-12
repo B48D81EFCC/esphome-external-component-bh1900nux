@@ -6,8 +6,8 @@ To use this component, include the following in your ESPHome configuration:
 
 ```yaml
 external_components:
-  - source: github://pr#8631
-    components: [bh1900nux]
+  - source: github://B48D81EFCC/esphome-external-component-bh1900nux@main
+    components: [ bh1900nux ]
     refresh: 1h
 
 ```
