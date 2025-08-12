@@ -1,0 +1,33 @@
+esphome:
+  name: esp32-bh1900nux-temperature
+
+esp32:
+  board: esp32-poe-iso
+  framework:
+    type: esp-idf
+
+logger:
+  level: DEBUG
+
+api:
+
+ota:
+  platform: esphome
+
+external_components:
+  - source: github://B48D81EFCC/esphome-external-component-bh1900nux@main
+    components: [ bh1900nux ]
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+i2c:
+  sda: GPIO13
+  scl: GPIO16
+  scan: true
+
+sensor:
+  - platform: bh1900nux
+    name: "Temperature"
+    update_interval: 5s
